@@ -1,3 +1,46 @@
-<h1>
-    Hello World
-</h1>
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Boston House Price Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+     <form action="{{ url_for('predict')}}" method="post">
+        <input type="text" name="Car_Name" placeholder="Car_Name" required="required" /><br>
+        <input type="number" name="Year" placeholder="Year" required="required" /><br>
+        <input type="number" name="Present_Price" placeholder="Present_Price" required="required" /><br>
+        <input type="number" name="Kms_Driven" placeholder="Kms_Driven" required="required" /><br>
+        <label for="Fuel_Type">Fuel_Type:</label>
+        <input type="radio" name="Fuel_Type" value="Petrol" checked> Petrol
+        <input type="radio" name="Fuel_Type" value="Diesel"> Diesel<br>
+        <label for="Seller_Type">Seller_Type:</label>
+        <input type="radio" name="Seller_Type" value="Individual" checked> Individual
+        <input type="radio" name="Seller_Type" value="Dealer"> Dealer<br>
+        <label for="Transmission">Transmission:</label>
+        <input type="radio" name="Transmission" value="Manual" checked> Manual
+        <input type="radio" name="Transmission" value="Automatic"> Automatic<br>
+        <input type="number" name="Owner" placeholder="Owner" required="required" /><br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+      </form>      
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>
