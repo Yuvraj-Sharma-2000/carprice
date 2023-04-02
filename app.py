@@ -82,6 +82,7 @@ def predict():
     new_data=scalar.transform(np.array(list(data.values())).reshape(1,-1))
     output=regmodel.predict(new_data)
     print(output[0])
+
     return render_template("home.html",prediction_text="The Car price prediction is {}".format(output))
 
 
