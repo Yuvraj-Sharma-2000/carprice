@@ -83,7 +83,7 @@ def predict():
     output=regmodel.predict(new_data)
     print(output[0])
 
-    return render_template("home.html",prediction_text="The Car price prediction is {}".format(output))
+    return render_template("home.html",prediction_text="The Car price prediction is {}".format(output)+"Lakhs")
 
 
 if __name__=="__main__":
